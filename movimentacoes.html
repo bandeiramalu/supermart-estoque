@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperMart | Controle de estoque</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Ordem importa: estoque.js (lógica) antes de app.js (interface) -->
+  <script src="js/estoque.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <!-- Menu Lateral -->
+  <div id="menu_lateral">
+    <button class="btn_lateral" onclick="window.location.href='visao_geral.html'">
+      <span>📦</span> Visão geral
+    </button>
+    <button class="btn_lateral" onclick="window.location.href='movimentacoes.html'">
+      <span>🚚</span> Movimentações
+    </button>
+  </div>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="header">
+    <h1 class="logo">SuperMart</h1>
+    <p class="subtitulo">Movimentações</p>
+  </header>
+
+  <main>
+    <!-- COLOCAR AQUI A PAGINA PRINCIPAL -->  
+      <!-- tabela de entrada de produtos -->
+      <section class="tabelas_movimentacoes">
+      <div>
+        <h2 id="título_estoq">Entradas de produtos</h3>
+        
+        <div id="buscar">
+          <input type="text" placeholder="Buscar por nome">
+          <select id="categorias">
+            <option>Todas as categorias</option>
+          </select>
+        </div>
+
+        <table id="tabela_entradas">
+          <thead>
+            <tr>
+              <th>Tipo de entrd.</th>
+              <th>Produto</th>
+              <th>Categoria</th>
+              <th>Preço</th>
+              <th>Qtd.</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+
+      <!-- tabela de saída de produtos -->
+      <div>
+        <h2 id="título_estoq">Saídas de produtos</h3>
+        
+        <div id="buscar">
+          <input type="text" placeholder="Buscar por nome">
+          <select id="categorias">
+            <option>Todas as categorias</option>
+          </select>
+        </div>
+
+        <table id="tabela_entradas">
+          <thead>
+            <tr>
+              <th>Tipo de saída</th>
+              <th>Produto</th>
+              <th>Categoria</th>
+              <th>Preço</th>
+              <th>Qtd.</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>SuperMart &middot; Projeto acadêmico de Programação Web Front-End</p>
+  </footer>
