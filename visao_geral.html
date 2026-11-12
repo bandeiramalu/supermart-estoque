@@ -7,9 +7,7 @@
 
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Ordem importa: estoque.js (lógica) antes de app.js (interface) -->
-  <script src="js/estoque.js" defer></script>
-  <script src="js/app.js" defer></script>
+  <script src="js/script.js" defer></script>
 </head>
 <body>
   <!-- Menu Lateral -->
@@ -54,23 +52,23 @@
           <div>
             <div>
               <label>Nome do produto</label>
-              <input type="text" class="cads">
+              <input type="text" id="nome_prod" class="cads">
             </div>
             <div>
               <label>Categoria</label> <!-- acho q aqui deveria ser um select pra escolher as categorias já cadastradas. -M -->
-              <input type="text" class="cads">
+              <input type="text" id="categoria_prod" class="cads">
             </div>
             <div>
               <label>Preço (R$)</label>
-              <input type="number" step="0.1" min="0" class="cads">
+              <input type="number" step="0.1" min="0" id="preco_prod" class="cads">
             </div>
             <div>
               <label>Quantidade</label>
-              <input type="number" min="0" class="cads">
+              <input type="number" min="0" id="quant_prod" class="cads">
             </div>
             <div>
               <label>Estoque mínimo</label>
-              <input type="number" min="0"class="cads">
+              <input type="number" min="0" id="min_prod" class="cads">
             </div>
             <div>
               <button type="submit" class="btn67" id="btn67_salva">Salvar produto</button>
@@ -97,12 +95,16 @@
             <tr>
               <th>Produto</th>
               <th>Categoria</th>
-              <th>Preço</th>
+              <th>Preço (R$)</th>
               <th>Qtd.</th>
+              <th>Estoque Min.</th>
               <th>Status</th>
               <th>Ações</th>
             </tr>
           </thead>
+          <tbody>
+            <!-- itens cadastrados vêm pra cá. -M -->
+          </tbody>
         </table>
       </section>
     </div>
