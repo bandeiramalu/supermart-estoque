@@ -6,7 +6,6 @@
   <title>SuperMart | Controle de estoque</title>
 
   <link rel="stylesheet" href="css/style.css">
-
   <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -33,15 +32,15 @@
       <section id="3_indicadores">
         <div class="indicadores" id="indica_1">
           <p>Produtos cadastrados</p>
-          <h2>10</h2>
+          <h2 id="prod_total">0</h2>
         </div>
         <div class="indicadores" id="indica_2">
           <p>Valor em estoque</p>
-          <h2>R$ 4.213,50</h2>
+          <h2 id="valor_estoque">R$ 0,00</h2>
         </div>
         <div class="indicadores" id="indica_3">
           <p>Itens com estoque baixo</p>
-          <h2>3</h2>
+          <h2>0<!-- colocar valor pelo JS --></h2>
         </div>
       </section>
 
@@ -52,23 +51,36 @@
           <div>
             <div>
               <label>Nome do produto</label>
-              <input type="text" id="nome_prod" class="cads">
+              <input type="text" id="nome_prod" class="cads" required>
             </div>
             <div>
-              <label>Categoria</label> <!-- acho q aqui deveria ser um select pra escolher as categorias já cadastradas. -M -->
-              <input type="text" id="categoria_prod" class="cads">
+              <label>Categoria</label>
+              <select id="categoria_prod" class="cads" required>
+                <option value="" disabled selected></option>
+                <option>Mercearia</option>
+                <option>Hortifrúti</option>
+                <option>Açougue e Peixaria</option>
+                <option>Frios e Laticínios</option>
+                <option>Congelados</option>
+                <option>Padaria e Confeitaria</option>
+                <option>Bebidas</option>
+                <option>Limpeza</option>
+                <option>Higiene e Perfumaria</option>
+                <option>Bazar e Pet</option>
+                <option>Eletrônicos</option>
+              </select>
             </div>
             <div>
               <label>Preço (R$)</label>
-              <input type="number" step="0.1" min="0" id="preco_prod" class="cads">
+              <input type="number" step="0.1" min="0" id="preco_prod" class="cads" required>
             </div>
             <div>
               <label>Quantidade</label>
-              <input type="number" min="0" id="quant_prod" class="cads">
+              <input type="number" min="0" id="quant_prod" class="cads" required>
             </div>
             <div>
               <label>Estoque mínimo</label>
-              <input type="number" min="0" id="min_prod" class="cads">
+              <input type="number" min="0" id="min_prod" class="cads" required>
             </div>
             <div>
               <button type="submit" class="btn67" id="btn67_salva">Salvar produto</button>
@@ -85,8 +97,18 @@
         <div id="buscar">
           <input type="text" placeholder="Buscar por nome">
           <select id="categorias">
-            <option>Todas as categorias</option> <!-- adicionar as categorias dos produtos. -M -->
+            <option>Todas as categorias</option>
+            <option>Mercearia</option>
+            <option>Hortifrúti</option>
+            <option>Açougue e Peixaria</option>
+            <option>Frios e Laticínios</option>
+            <option>Congelados</option>
+            <option>Padaria e Confeitaria</option>
             <option>Bebidas</option>
+            <option>Limpeza</option>
+            <option>Higiene e Perfumaria</option>
+            <option>Bazar e Pet</option>
+            <option>Eletrônicos</option>
           </select>
         </div>
 
@@ -97,7 +119,6 @@
               <th>Categoria</th>
               <th>Preço (R$)</th>
               <th>Qtd.</th>
-              <th>Estoque Min.</th>
               <th>Status</th>
               <th>Ações</th>
             </tr>
