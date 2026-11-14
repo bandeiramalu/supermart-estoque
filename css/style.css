@@ -7,7 +7,8 @@
 body {
   font-family: Arial, sans-serif;
   font-size: 14px;
-  background-color: #f3f3f1;
+  background-color: #f8f9fa;
+  color: #003049;
 }
 
 #menu_lateral {
@@ -17,37 +18,36 @@ body {
   bottom: 0;
   width: 150px;
   padding: 120px 10px 0 10px;
-  background-color: #0a7d45;
+  background-color: #003049;
 }
 
 .btn_lateral {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: block;
   width: 100%;
   margin-bottom: 14px;
   padding: 8px 10px;
   text-align: left;
-  white-space: nowrap;
+  font-family: Arial, sans-serif;
   color: white;
-  background-color: #0a7d45;
+  background-color: #003049;
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
 
 .btn_lateral:hover {
-  background-color: #0c8f50;
+  background-color: #0b4a68;
 }
 
 .header {
   display: flex;
   align-items: center;
   gap: 12px;
-  height: 52px;
+  height: 56px;
   margin-left: 150px;
   padding: 0 18px;
-  background-color: #0a7d45;
+  background-color: #d62828;
+  border-bottom: 4px solid #fcbf49;
   color: white;
 }
 
@@ -85,7 +85,7 @@ main h3 {
 
 .indicadores p {
   font-size: 12px;
-  color: #666;
+  color: #4d6a7a;
 }
 
 .indicadores h2 {
@@ -94,20 +94,20 @@ main h3 {
 }
 
 #indica_1, #indica_2 {
-  background-color: #cfe0dc;
-  border: 1px solid #b4c9c4;
+  background-color: #dff1ee;
+  border: 1px solid #2a9d8f;
 }
 
 #indica_3 {
-  background-color: #f7e6d3;
-  border: 1px solid #e8cfb2;
+  background-color: #fef2d4;
+  border: 1px solid #fcbf49;
 }
 
 #cadastro, main section:last-child {
   padding: 14px 16px;
   margin-bottom: 16px;
   background-color: white;
-  border: 1px solid #cfd6d2;
+  border: 1px solid #dde2e6;
   border-radius: 10px;
 }
 
@@ -123,22 +123,6 @@ main h3 {
   min-width: 130px;
 }
 
-#cadastro_prod label {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 11px;
-  color: #666;
-}
-
-.cads, #buscar input, #categorias {
-  width: 100%;
-  height: 26px;
-  padding: 0 8px;
-  background-color: #f5f6f5;
-  border: 1px solid #9aa39f;
-  border-radius: 4px;
-}
-
 #cadastro_prod > div > div:last-child {
   display: flex;
   justify-content: center;
@@ -146,6 +130,23 @@ main h3 {
   flex: 1;
   min-width: 210px;
   width: auto;
+}
+
+#cadastro_prod label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  color: #4d6a7a;
+}
+
+.cads, #buscar input, #categorias {
+  width: 100%;
+  height: 26px;
+  padding: 0 8px;
+  color: #003049;
+  background-color: #f8f9fa;
+  border: 1px solid #9fb2bd;
+  border-radius: 4px;
 }
 
 .btn67 {
@@ -159,13 +160,22 @@ main h3 {
 
 #btn67_salva {
   color: white;
-  background-color: #0a7d45;
-  border: 1px solid #086536;
+  background-color: #d62828;
+  border: 1px solid #b01e1e;
+}
+
+#btn67_salva:hover {
+  background-color: #b01e1e;
 }
 
 #btn67_limpa {
+  color: #003049;
   background-color: white;
-  border: 1px solid #555;
+  border: 1px solid #003049;
+}
+
+#btn67_limpa:hover {
+  background-color: #eef1f3;
 }
 
 #buscar {
@@ -197,20 +207,20 @@ main section:last-child {
   padding: 7px 8px;
   text-align: left;
   color: white;
-  background-color: #0a7d45;
+  background-color: #003049;
 }
 
 #tabela td {
   padding: 8px;
-  border-bottom: 1px solid #eceeed;
+  border-bottom: 1px solid #e6eaed;
 }
 
 .linha-baixo td {
-  background-color: #fbeedd;
+  background-color: #fef2d4;
 }
 
 .linha-zerado td {
-  background-color: #fbe4e4;
+  background-color: #fbe1e1;
 }
 
 .status {
@@ -223,23 +233,24 @@ main section:last-child {
 }
 
 .status-normal {
-  background-color: #0a7d45;
+  background-color: #2a9d8f;
 }
 
 .status-baixo {
-  background-color: #c2570c;
+  color: #003049;
+  background-color: #fcbf49;
 }
 
 .status-zerado {
-  background-color: #d61f1f;
+  background-color: #d62828;
 }
 
 .btn_acao {
   width: 26px;
   height: 18px;
   margin-right: 3px;
-  background-color: #f5f6f5;
-  border: 1px solid #8a928e;
+  background-color: #f8f9fa;
+  border: 1px solid #003049;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -252,7 +263,7 @@ main section:last-child {
   font-size: 11px;
   font-weight: bold;
   color: white;
-  background-color: #0a7d45;
+  background-color: #2a9d8f;
   border-radius: 6px;
 }
 
@@ -260,5 +271,6 @@ main section:last-child {
   margin-left: 150px;
   padding: 0 20px 14px 20px;
   font-size: 10px;
-  color: #666;
+  color: #4d6a7a;
 }
+
