@@ -16,7 +16,7 @@ Sistema web de gerenciamento de estoque para o mercado **SuperMart**, desenvolvi
 
 1. Clone o repositório:
    ```bash
-   git clone <https://github.com/bandeiramalu/supermart-estoque.git>
+   git clone https://github.com/bandeiramalu/supermart-estoque.git
    ```
 2. Abra a pasta do projeto.
 3. Abra o arquivo `index.html` no navegador (ou use a extensão Live Server do VS Code).
@@ -31,8 +31,7 @@ supermart-estoque/
 ├── css/
 │   └── style.css     # estilos
 ├── js/
-│   ├── estoque.js    # lógica e dados (sem DOM)
-│   └── app.js        # interface (DOM e eventos)
+│   └── script.js        # responsividade
 ├── .gitignore
 └── README.md
 ```
