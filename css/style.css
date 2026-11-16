@@ -219,6 +219,31 @@ main section:last-child {
   background-color: #fef2d4;
 }
 
+.btn-acao {
+  margin-right: 6px;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-editar {
+  background-color: #2a9d8f;
+}
+
+.btn-editar:hover {
+  background-color: #21867a;
+}
+
+.btn-excluir {
+  background-color: #d62828;
+}
+
+.btn-excluir:hover {
+  background-color: #b01e1e;
+}
+
 .linha-zerado td {
   background-color: #fbe1e1;
 }
