@@ -9,17 +9,6 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <!-- Menu Lateral -->
-  <div id="menu_lateral">
-    <button class="btn_lateral" onclick="window.location.href='visao_geral.html'">
-      <span>📦</span> Visão geral
-    </button>
-    <button class="btn_lateral" onclick="window.location.href='movimentacoes.html'">
-      <span>🚚</span> Movimentações
-    </button>
-  </div>
-
-  <!-- ===================== CABEÇALHO ===================== -->
   <header class="header">
     <h1 class="logo">SuperMart</h1>
     <p class="subtitulo">Controle de estoque</p>
@@ -95,7 +84,7 @@
         <h3 id="título_estoq">Produtos em estoque</h3>
         
         <div id="buscar">
-          <input type="text" placeholder="Buscar por nome">
+          <input type="text" id="busca_nome" placeholder="Buscar por nome">
           <select id="categorias">
             <option>Todas as categorias</option>
             <option>Mercearia</option>

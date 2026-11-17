@@ -34,6 +34,27 @@ function atualizarResumo() {
     document.getElementById("estoque_baixo").textContent = contagemBaixo
 }
 
+const campoBusca = document.getElementById("busca_nome")
+const filtroCategoria = document.getElementById("categorias")
+
+function aplicarFiltros() {
+    const textoBusca = campoBusca.value.toLowerCase().trim()
+    const categoriaEscolhida = filtroCategoria.value
+
+    Array.from(tabelaBody.rows).forEach(function(linha) {
+        const nomeDaLinha = linha.cells[0].textContent.toLowerCase()
+        const categoriaDaLinha = linha.cells[1].textContent
+
+        const passouNome = nomeDaLinha.includes(textoBusca)
+        const passouCategoria = categoriaEscolhida === "Todas as categorias" || categoriaDaLinha === categoriaEscolhida
+
+        linha.style.display = (passouNome && passouCategoria) ? "" : "none"
+    })
+}
+
+campoBusca.addEventListener("input", aplicarFiltros)
+filtroCategoria.addEventListener("change", aplicarFiltros)
+
 // Cria os botões com o estilo indicado para cada ação.
 function criarBotaoAcao(texto, classe) {
     const botao = document.createElement("button")
@@ -41,6 +62,18 @@ function criarBotaoAcao(texto, classe) {
     botao.textContent = texto
     botao.className = `btn-acao ${classe}`
     return botao
+}
+
+function aplicarCorStatus(linha) {
+    const status = linha.cells[4].textContent
+
+    linha.classList.remove("linha-ok", "linha-baixo")
+
+    if (status === "Estoque baixo!") {
+        linha.classList.add("linha-baixo")
+    } else {
+        linha.classList.add("linha-ok")
+    }
 }
 
 formulario.addEventListener("submit", function(evento) {
@@ -57,9 +90,12 @@ formulario.addEventListener("submit", function(evento) {
     // Se não há linha selecionada para edição, cria uma nova linha e seus botões.
     if (!linha) {
         linha = document.createElement("tr")
-        for (let i = 0; i < 6; i++) {
-            linha.appendChild(document.createElement("td"))
-        }
+        linha.appendChild(document.createElement("td"))
+        linha.appendChild(document.createElement("td"))
+        linha.appendChild(document.createElement("td"))
+        linha.appendChild(document.createElement("td"))
+        linha.appendChild(document.createElement("td"))
+        linha.appendChild(document.createElement("td"))
 
         const colunaAcoes = linha.cells[5]
         const botaoEditar = criarBotaoAcao("Editar", "btn-editar")
@@ -98,9 +134,11 @@ formulario.addEventListener("submit", function(evento) {
     linha.cells[4].textContent = estoqueBaixo(quantidade, minimo)
     // Guarda o estoque mínimo para recuperá-lo ao editar o produto.
     linha.dataset.minimo = minimo
+    aplicarCorStatus(linha)
 
     linhaEmEdicao = null
     atualizarResumo()
+    aplicarFiltros()
     formulario.reset()
 })
 
