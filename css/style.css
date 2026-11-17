@@ -160,12 +160,12 @@ main h3 {
 
 #btn67_salva {
   color: white;
-  background-color: #d62828;
-  border: 1px solid #b01e1e;
+  background-color: #002D4B;
+  border: 1px solid #002D4B;
 }
 
 #btn67_salva:hover {
-  background-color: #b01e1e;
+  background-color: #002D4B;
 }
 
 #btn67_limpa {
