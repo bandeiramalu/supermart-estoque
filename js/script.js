@@ -132,6 +132,7 @@ formulario.addEventListener("submit", function(evento) {
     linha.cells[2].textContent = preco
     linha.cells[3].textContent = quantidade
     linha.cells[4].textContent = estoqueBaixo(quantidade, minimo)
+    linha.cells[4].title = `Estoque mínimo: ${minimo}`
     // Guarda o estoque mínimo para recuperá-lo ao editar o produto.
     linha.dataset.minimo = minimo
     aplicarCorStatus(linha)
