@@ -13,7 +13,7 @@ body {
 
 #menu_lateral {
   position: fixed;
-  top: 0;
+  top: 56px;
   left: 0;
   bottom: 0;
   width: 150px;
@@ -44,7 +44,7 @@ body {
   align-items: center;
   gap: 12px;
   height: 56px;
-  margin-left: 150px;
+  margin-left: 165;
   padding: 0 18px;
   background-color: #d62828;
   border-bottom: 4px solid #fcbf49;
@@ -160,12 +160,12 @@ main h3 {
 
 #btn67_salva {
   color: white;
-  background-color: #002D4B;
-  border: 1px solid #002D4B;
+  background-color: #d62828;
+  border: 1px solid #b01e1e;
 }
 
 #btn67_salva:hover {
-  background-color: #002D4B;
+  background-color: #b01e1e;
 }
 
 #btn67_limpa {
@@ -273,4 +273,3 @@ main section:last-child {
   font-size: 10px;
   color: #4d6a7a;
 }
-
