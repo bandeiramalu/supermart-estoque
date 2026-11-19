@@ -4,73 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SuperMart | Controle de estoque</title>
-
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+ 
   <link rel="stylesheet" href="css/style.css">
-
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <!-- Menu Lateral -->
+  <header class="header">
+    <div class="marca">
+   <img src="logo.png" alt="SuperMart"> 
+    
+      <div>
+    
+        <p class="subtitulo">Controle de estoque</p>
+      </div>
+    </div>
+  </header>
+ 
   <div id="menu_lateral">
-    <button class="btn_lateral" onclick="window.location.href='visao_geral.html'">
-      <span>📦</span> Visão geral
+    <button class="btn_lateral ativo" onclick="window.location.href='visao_geral.html'">
+    Estoque
     </button>
     <button class="btn_lateral" onclick="window.location.href='movimentacoes.html'">
-      <span>🚚</span> Movimentações
+      Novo Produto
     </button>
   </div>
-
-  <!-- ===================== CABEÇALHO ===================== -->
-  <header class="header">
-    <h1 class="logo">SuperMart</h1>
-    <p class="subtitulo">Controle de estoque</p>
-  </header>
-
+ 
   <main>
-    <!-- COLOCAR AQUI A PAGINA PRINCIPAL -->  
     <div>
-      <!-- indicadores (aqueles 3 quadrados com indicadores, como tá lá no figma)-->
       <section id="3_indicadores">
         <div class="indicadores" id="indica_1">
           <p>Produtos cadastrados</p>
-          <h2>10</h2>
+          <h2 id="prod_total">0</h2>
         </div>
         <div class="indicadores" id="indica_2">
           <p>Valor em estoque</p>
-          <h2>R$ 4.213,50</h2>
+          <h2 id="valor_estoque">R$ 0,00</h2>
         </div>
         <div class="indicadores" id="indica_3">
-          <p>Itens com estoque baixo</p>
-          <h2>3</h2>
+          <p>Precisam de reposição</p>
+          <h2 id="estoque_baixo">0</h2>
         </div>
       </section>
-
-      <!-- formulário do cadastro (n tem muito oq explicar disso) -->
+ 
       <section id="cadastro">
         <h3 id="titulo_cd">Cadastrar produto</h3>
         <form id="cadastro_prod">
           <div>
             <div>
               <label>Nome do produto</label>
-              <input type="text" id="nome_prod" class="cads">
+              <input type="text" id="nome_prod" class="cads" required>
             </div>
             <div>
               <label>Categoria</label>
-              <select class="cads">
-                <option>Alimento</option>
+              <select id="categoria_prod" class="cads" required>
+                <option value="" disabled selected>Escolha uma categoria</option>
+                <option>Mercearia</option>
+                <option>Hortifrúti</option>
+                <option>Açougue e Peixaria</option>
+                <option>Frios e Laticínios</option>
+                <option>Congelados</option>
+                <option>Padaria e Confeitaria</option>
+                <option>Bebidas</option>
+                <option>Limpeza</option>
+                <option>Higiene e Perfumaria</option>
+                <option>Bazar e Pet</option>
+                <option>Eletrônicos</option>
               </select>
             </div>
             <div>
               <label>Preço (R$)</label>
-              <input type="number" step="0.1" min="0" id="preco_prod" class="cads">
+              <input type="number" step="0.1" min="0" id="preco_prod" class="cads" required>
             </div>
             <div>
-              <label>Quantidade</label>
-              <input type="number" min="0" id="quant_prod" class="cads">
+              <label>Quantidade em estoque</label>
+              <input type="number" min="0" id="quant_prod" class="cads" required>
             </div>
             <div>
               <label>Estoque mínimo</label>
-              <input type="number" min="0" id="min_prod" class="cads">
+              <input type="number" min="0" id="min_prod" class="cads" required>
             </div>
             <div>
               <button type="submit" class="btn67" id="btn67_salva">Salvar produto</button>
@@ -79,19 +94,28 @@
           </div>
         </form>
       </section>
-
-      <!-- tabela dos produtos -->
+ 
       <section>
         <h3 id="título_estoq">Produtos em estoque</h3>
         
         <div id="buscar">
           <input type="text" placeholder="Buscar por nome">
           <select id="categorias">
-            <option>Todas as categorias</option> <!-- adicionar as categorias dos produtos. -M -->
+            <option>Todas as categorias</option>
+            <option>Mercearia</option>
+            <option>Hortifrúti</option>
+            <option>Açougue e Peixaria</option>
+            <option>Frios e Laticínios</option>
+            <option>Congelados</option>
+            <option>Padaria e Confeitaria</option>
             <option>Bebidas</option>
+            <option>Limpeza</option>
+            <option>Higiene e Perfumaria</option>
+            <option>Bazar e Pet</option>
+            <option>Eletrônicos</option>
           </select>
         </div>
-
+ 
         <table id="tabela">
           <thead>
             <tr>
@@ -99,22 +123,20 @@
               <th>Categoria</th>
               <th>Preço (R$)</th>
               <th>Qtd.</th>
-              <th>Estoque Min.</th>
               <th>Status</th>
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
-            <!-- itens cadastrados vêm pra cá. -M -->
           </tbody>
         </table>
       </section>
     </div>
   </main>
-
+ 
   <footer class="footer">
     <p>SuperMart &middot; Projeto acadêmico de Programação Web Front-End</p>
   </footer>
-
+ 
 </body>
 </html>
