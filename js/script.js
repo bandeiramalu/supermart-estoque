@@ -207,8 +207,10 @@ function criarLinhaProduto(produto, permitirEdicao) {
         linha.appendChild(celula);
     });
 
-    linha.classList.add(status.linha);
-
+   if (status.linha) {
+        linha.classList.add(status.linha);
+    }
+    
     const celulaStatus = document.createElement("td");
     const seloStatus = document.createElement("span");
     seloStatus.className = `status status-${status.classe}`;
