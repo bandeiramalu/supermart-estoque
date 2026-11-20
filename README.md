@@ -5,12 +5,13 @@ Sistema web de gerenciamento de estoque para o mercado **SuperMart**, desenvolvi
 ## Funcionalidades
 
 - Cadastrar, editar e excluir produtos (nome, categoria, preço, quantidade e estoque mínimo)
-- Listar os produtos em uma tabela
-- Buscar por nome e filtrar por categoria
-- Registrar entrada e saída de estoque (a saída nunca deixa o estoque negativo)
+- Consultar o mesmo estoque na visão geral e na página de movimentações
+- Buscar por nome e filtrar produtos por categoria
+- Registrar entradas, ajustes e baixas de estoque com data e hora
+- Impedir baixas maiores que o estoque disponível
 - Identificar produtos com estoque baixo ou zerado
 - Painel de resumo: total de produtos, valor total em estoque e itens com estoque baixo
-- Dados salvos no `localStorage` do navegador
+- Produtos e histórico de movimentações salvos no `localStorage` do navegador
 
 ## Como executar
 
@@ -18,8 +19,9 @@ Sistema web de gerenciamento de estoque para o mercado **SuperMart**, desenvolvi
    ```bash
    git clone https://github.com/bandeiramalu/supermart-estoque.git
    ```
-2. Abra a pasta do projeto.
-3. Abra o arquivo `index.html` no navegador (ou use a extensão Live Server do VS Code).
+2. Abra a pasta do projeto no VS Code.
+3. Use a extensão Live Server para abrir `visao_geral.html` no navegador.
+4. Acesse **Movimentações** pelo menu para consultar o estoque atual e o histórico de entradas e saídas.
 
 Não é preciso instalar nada.
 
@@ -27,11 +29,12 @@ Não é preciso instalar nada.
 
 ```
 supermart-estoque/
-├── index.html        # estrutura da página
+├── visao_geral.html  # cadastro e visão geral do estoque
+├── movimentacoes.html # estoque atual e histórico de movimentações
 ├── css/
-│   └── style.css     # estilos
+│   └── style.css     # estilos compartilhados
 ├── js/
-│   └── script.js        # responsividade
+│   └── script.js     # lógica de estoque e movimentações
 ├── .gitignore
 └── README.md
 ```

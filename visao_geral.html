@@ -15,6 +15,15 @@
   </header>
 
   <main>
+      <!-- Menu Lateral -->
+    <div id="menu_lateral">
+      <button class="btn_lateral" onclick="window.location.href='visao_geral.html'">
+        <span>📦</span> Visão geral
+      </button>
+      <button class="btn_lateral" onclick="window.location.href='movimentacoes.html'">
+        <span>🚚</span> Movimentações
+      </button>
+    </div>
     <!-- COLOCAR AQUI A PAGINA PRINCIPAL -->  
     <div>
       <!-- indicadores (aqueles 3 quadrados com indicadores, como tá lá no figma)-->
@@ -61,7 +70,7 @@
             </div>
             <div>
               <label>Preço (R$)</label>
-              <input type="number" step="0.1" min="0" id="preco_prod" class="cads" required>
+              <input type="number" step="0.01" min="0" id="preco_prod" class="cads" required>
             </div>
             <div>
               <label>Quantidade</label>
@@ -101,7 +110,7 @@
           </select>
         </div>
 
-        <table id="tabela">
+        <table id="tabela" class="tabela-dados">
           <thead>
             <tr>
               <th>Produto</th>
@@ -112,9 +121,7 @@
               <th>Ações</th>
             </tr>
           </thead>
-          <tbody>
-            <!-- itens cadastrados vêm pra cá. -M -->
-          </tbody>
+          <tbody></tbody>
         </table>
       </section>
     </div>

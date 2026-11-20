@@ -203,16 +203,81 @@ main section:last-child {
   font-size: 11px;
 }
 
-#tabela th {
+#tabela th, .tabela-dados th {
   padding: 7px 8px;
   text-align: left;
   color: white;
   background-color: #003049;
 }
 
-#tabela td {
+#tabela td, .tabela-dados td {
   padding: 8px;
   border-bottom: 1px solid #e6eaed;
+}
+
+.tabela-dados {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.tabela-container {
+  overflow-x: auto;
+}
+
+.tabelas_movimentacoes {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.secao-movimentacoes {
+  min-width: 0;
+  padding: 14px 16px;
+  background-color: white;
+  border: 1px solid #dde2e6;
+  border-radius: 10px;
+}
+
+.secao-movimentacoes h2 {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.descricao-secao {
+  margin-bottom: 12px;
+  color: #4d6a7a;
+  font-size: 12px;
+}
+
+.filtros-movimentacoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.filtros-movimentacoes input,
+.filtros-movimentacoes select {
+  height: 28px;
+  padding: 0 8px;
+  color: #003049;
+  background-color: #f8f9fa;
+  border: 1px solid #9fb2bd;
+  border-radius: 4px;
+}
+
+.filtros-movimentacoes input {
+  width: 255px;
+}
+
+.filtros-movimentacoes select {
+  width: 190px;
+}
+
+.tabela-vazia {
+  text-align: center;
+  color: #4d6a7a;
 }
 
 .linha-ok td {
@@ -250,6 +315,16 @@ main section:last-child {
 
 .btn-editar:hover {
   background-color: #eef1f3;
+}
+
+.btn-baixa {
+  color: white;
+  background-color: #2a9d8f;
+  border: 1px solid #21867a;
+}
+
+.btn-baixa:hover {
+  background-color: #21867a;
 }
 
 .btn-excluir {

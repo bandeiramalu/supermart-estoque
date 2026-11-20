@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperMart | Movimentações</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <div id="menu_lateral">
+    <button class="btn_lateral" onclick="window.location.href='visao_geral.html'">
+      <span>📦</span> Visão geral
+    </button>
+    <button class="btn_lateral" onclick="window.location.href='movimentacoes.html'">
+      <span>🚚</span> Movimentações
+    </button>
+  </div>
+
+  <header class="header">
+    <h1 class="logo">SuperMart</h1>
+    <p class="subtitulo">Movimentações</p>
+  </header>
+
+  <main>
+    <section class="secao-movimentacoes">
+      <h2>Estoque atual</h2>
+      <p class="descricao-secao">Produtos compartilhados com a visão geral.</p>
+      <div class="filtros-movimentacoes">
+        <input type="text" id="busca_movimentacoes" placeholder="Buscar por nome">
+        <select id="categorias_movimentacoes">
+          <option>Todas as categorias</option>
+          <option>Mercearia</option>
+          <option>Hortifrúti</option>
+          <option>Açougue e Peixaria</option>
+          <option>Frios e Laticínios</option>
+          <option>Congelados</option>
+          <option>Padaria e Confeitaria</option>
+          <option>Bebidas</option>
+          <option>Limpeza</option>
+          <option>Higiene e Perfumaria</option>
+          <option>Bazar e Pet</option>
+          <option>Eletrônicos</option>
+        </select>
+      </div>
+      <div class="tabela-container">
+        <table id="tabela_produtos" class="tabela-dados">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Categoria</th>
+              <th>Preço (R$)</th>
+              <th>Qtd.</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="tabelas_movimentacoes">
+      <div class="secao-movimentacoes">
+        <h2>Entradas de produtos</h2>
+        <div class="tabela-container">
+          <table id="tabela_entradas" class="tabela-dados">
+            <thead>
+              <tr>
+                <th>Data e hora</th>
+                <th>Tipo de entrada</th>
+                <th>Produto</th>
+                <th>Categoria</th>
+                <th>Preço (R$)</th>
+                <th>Qtd. movimentada</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="secao-movimentacoes">
+        <h2>Saídas de produtos</h2>
+        <div class="tabela-container">
+          <table id="tabela_saidas" class="tabela-dados">
+            <thead>
+              <tr>
+                <th>Data e hora</th>
+                <th>Tipo de saída</th>
+                <th>Produto</th>
+                <th>Categoria</th>
+                <th>Preço (R$)</th>
+                <th>Qtd. movimentada</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>SuperMart &middot; Projeto acadêmico de Programação Web Front-End</p>
+  </footer>
+</body>
+</html>
