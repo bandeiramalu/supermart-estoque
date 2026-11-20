@@ -173,6 +173,24 @@ function registrarBaixa(produto) {
     renderizarTudo();
 }
 
+function registrarEntrada(produto) {
+    const resposta = prompt(
+        `Quantas unidades de "${produto.nome}" deseja dar entrada?`,
+    );
+    if (resposta === null) return;
+
+    const quantidade = Number(resposta);
+    if (!Number.isInteger(quantidade) || quantidade <= 0) {
+        alert("Informe uma quantidade inteira maior que zero.");
+        return;
+    }
+
+    produto.quantidade += quantidade;
+    registrarMovimentacao(produto, "Entrada", quantidade, "Entrada");
+    salvarDados();
+    renderizarTudo();
+}
+
 function criarLinhaProduto(produto, permitirEdicao) {
     const linha = document.createElement("tr");
     const status = obterStatusProduto(produto);
@@ -201,6 +219,9 @@ function criarLinhaProduto(produto, permitirEdicao) {
     linha.cells[4].title = `Estoque mínimo: ${produto.minimo}`;
 
     const colunaAcoes = document.createElement("td");
+    colunaAcoes.appendChild(
+        criarBotaoAcao("Entrada", "btn-entrada", () => registrarEntrada(produto)),
+    );
     colunaAcoes.appendChild(
         criarBotaoAcao("Baixa", "btn-baixa", () => registrarBaixa(produto)),
     );

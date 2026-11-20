@@ -350,6 +350,16 @@ main section.tabelas_movimentacoes {
   background-color: #21867a;
 }
 
+.btn-entrada {
+  color: #ffffff;
+  background-color: #457b9d;
+  border: 1px solid #35627e;
+}
+
+.btn-entrada:hover {
+  background-color: #35627e;
+}
+
 .btn-excluir {
   color: #ffffff;
   background-color: #d62828;
