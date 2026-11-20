@@ -4,31 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SuperMart | Controle de estoque</title>
-
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+ 
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
-  <!-- Menu Lateral -->
+  <header class="header">
+    <div class="marca">
+   <img src="logo.png" alt="SuperMart"> 
+    
+      <div>
+        <p class="subtitulo">Controle de estoque</p>
+      </div>
+    </div>
+  </header>
+ 
   <div id="menu_lateral">
-    <button class="btn_lateral" onclick="window.location.href='visao_geral.html'">
-      <span>📦</span> Visão geral
+    <button class="btn_lateral ativo" onclick="window.location.href='visao_geral.html'">
+      Estoque
     </button>
     <button class="btn_lateral" onclick="window.location.href='movimentacoes.html'">
-      <span>🚚</span> Movimentações
+      Movimentações
     </button>
   </div>
-
-  <!-- ===================== CABEÇALHO ===================== -->
-  <header class="header">
-    <h1 class="logo">SuperMart</h1>
-    <p class="subtitulo">Controle de estoque</p>
-  </header>
-
+ 
   <main>
-    <!-- COLOCAR AQUI A PAGINA PRINCIPAL -->  
     <div>
-      <!-- indicadores (aqueles 3 quadrados com indicadores, como tá lá no figma)-->
       <section id="3_indicadores">
         <div class="indicadores" id="indica_1">
           <p>Produtos cadastrados</p>
@@ -43,8 +48,7 @@
           <h2 id="estoque_baixo">0</h2>
         </div>
       </section>
-
-      <!-- formulário do cadastro (n tem muito oq explicar disso) -->
+ 
       <section id="cadastro">
         <h3 id="titulo_cd">Cadastrar produto</h3>
         <form id="cadastro_prod">
@@ -56,7 +60,7 @@
             <div>
               <label>Categoria</label>
               <select id="categoria_prod" class="cads" required>
-                <option value="" disabled selected></option>
+                <option value="" disabled selected>Escolha uma categoria</option>
                 <option>Mercearia</option>
                 <option>Hortifrúti</option>
                 <option>Açougue e Peixaria</option>
@@ -75,7 +79,7 @@
               <input type="number" step="0.1" min="0" id="preco_prod" class="cads" required>
             </div>
             <div>
-              <label>Quantidade</label>
+              <label>Quantidade em estoque</label>
               <input type="number" min="0" id="quant_prod" class="cads" required>
             </div>
             <div>
@@ -89,8 +93,7 @@
           </div>
         </form>
       </section>
-
-      <!-- tabela dos produtos -->
+ 
       <section>
         <h3 id="título_estoq">Produtos em estoque</h3>
         
@@ -111,7 +114,7 @@
             <option>Eletrônicos</option>
           </select>
         </div>
-
+ 
         <table id="tabela">
           <thead>
             <tr>
@@ -124,16 +127,15 @@
             </tr>
           </thead>
           <tbody>
-            <!-- itens cadastrados vêm pra cá. -M -->
           </tbody>
         </table>
       </section>
     </div>
   </main>
-
+ 
   <footer class="footer">
     <p>SuperMart &middot; Projeto acadêmico de Programação Web Front-End</p>
   </footer>
-
+ 
 </body>
 </html>
