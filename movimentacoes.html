@@ -5,30 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SuperMart | Movimentações</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
+  <header class="header">
+    <div class="marca">
+      <img src="logo.png" alt="SuperMart">
+
+      <div>
+        <p class="subtitulo">Controle de estoque</p>
+      </div>
+    </div>
+  </header>
+
   <div id="menu_lateral">
     <button class="btn_lateral" onclick="window.location.href='visao_geral.html'">
-      <span>📦</span> Visão geral
+      Estoque
     </button>
-    <button class="btn_lateral" onclick="window.location.href='movimentacoes.html'">
-      <span>🚚</span> Movimentações
+    <button class="btn_lateral ativo" onclick="window.location.href='movimentacoes.html'">
+      Movimentações
     </button>
   </div>
-
-  <header class="header">
-    <h1 class="logo">SuperMart</h1>
-    <p class="subtitulo">Movimentações</p>
-  </header>
 
   <main>
     <section class="secao-movimentacoes">
       <h2>Estoque atual</h2>
       <p class="descricao-secao">Produtos compartilhados com a visão geral.</p>
       <div class="filtros-movimentacoes">
-        <input type="text" id="busca_movimentacoes" placeholder="Buscar por nome">
+      <label class="campo-oculto" for="busca_movimentacoes">Buscar por nome</label>
+      <input type="search" id="busca_movimentacoes" placeholder="Buscar por nome">
+      <label class="campo-oculto" for="categorias_movimentacoes">Categoria</label>
         <select id="categorias_movimentacoes">
           <option>Todas as categorias</option>
           <option>Mercearia</option>

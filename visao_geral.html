@@ -4,57 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SuperMart | Controle de estoque</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/script.js" defer></script>
 </head>
 <body>
   <header class="header">
-    <h1 class="logo">SuperMart</h1>
-    <p class="subtitulo">Controle de estoque</p>
+    <div class="marca">
+      <img src="logo.png" alt="SuperMart">
+      <p class="subtitulo">Controle de estoque</p>
+    </div>
   </header>
 
+  <div id="menu_lateral">
+    <button class="btn_lateral ativo" onclick="window.location.href='visao_geral.html'">
+      Estoque
+    </button>
+    <button class="btn_lateral" onclick="window.location.href='movimentacoes.html'">
+      Movimentações
+    </button>
+  </div>
+
   <main>
-      <!-- Menu Lateral -->
-    <div id="menu_lateral">
-      <button class="btn_lateral" onclick="window.location.href='visao_geral.html'">
-        <span>📦</span> Visão geral
-      </button>
-      <button class="btn_lateral" onclick="window.location.href='movimentacoes.html'">
-        <span>🚚</span> Movimentações
-      </button>
-    </div>
-    <!-- COLOCAR AQUI A PAGINA PRINCIPAL -->  
     <div>
-      <!-- indicadores (aqueles 3 quadrados com indicadores, como tá lá no figma)-->
-      <section id="3_indicadores">
-        <div class="indicadores" id="indica_1">
+      <section class="indicadores-resumo">
+        <div class="indicadores">
           <p>Produtos cadastrados</p>
           <h2 id="prod_total">0</h2>
         </div>
-        <div class="indicadores" id="indica_2">
+        <div class="indicadores indica-valor">
           <p>Valor em estoque</p>
           <h2 id="valor_estoque">R$ 0,00</h2>
         </div>
-        <div class="indicadores" id="indica_3">
+        <div class="indicadores indica-baixo">
           <p>Itens com estoque baixo</p>
           <h2 id="estoque_baixo">0</h2>
         </div>
       </section>
 
-      <!-- formulário do cadastro (n tem muito oq explicar disso) -->
       <section id="cadastro">
-        <h3 id="titulo_cd">Cadastrar produto</h3>
+        <h3>Cadastrar produto</h3>
         <form id="cadastro_prod">
           <div>
             <div>
-              <label>Nome do produto</label>
+              <label for="nome_prod">Nome do produto</label>
               <input type="text" id="nome_prod" class="cads" required>
             </div>
             <div>
-              <label>Categoria</label>
+              <label for="categoria_prod">Categoria</label>
               <select id="categoria_prod" class="cads" required>
-                <option value="" disabled selected></option>
+                <option value="" disabled selected>Escolha uma categoria</option>
                 <option>Mercearia</option>
                 <option>Hortifrúti</option>
                 <option>Açougue e Peixaria</option>
@@ -69,15 +70,15 @@
               </select>
             </div>
             <div>
-              <label>Preço (R$)</label>
+              <label for="preco_prod">Preço (R$)</label>
               <input type="number" step="0.01" min="0" id="preco_prod" class="cads" required>
             </div>
             <div>
-              <label>Quantidade</label>
+              <label for="quant_prod">Quantidade em estoque</label>
               <input type="number" min="0" id="quant_prod" class="cads" required>
             </div>
             <div>
-              <label>Estoque mínimo</label>
+              <label for="min_prod">Estoque mínimo</label>
               <input type="number" min="0" id="min_prod" class="cads" required>
             </div>
             <div>
@@ -88,12 +89,13 @@
         </form>
       </section>
 
-      <!-- tabela dos produtos -->
       <section>
-        <h3 id="título_estoq">Produtos em estoque</h3>
-        
+        <h3>Produtos em estoque</h3>
+
         <div id="buscar">
-          <input type="text" id="busca_nome" placeholder="Buscar por nome">
+          <label class="campo-oculto" for="busca_nome">Buscar por nome</label>
+          <input type="search" id="busca_nome" placeholder="Buscar por nome">
+          <label class="campo-oculto" for="categorias">Categoria</label>
           <select id="categorias">
             <option>Todas as categorias</option>
             <option>Mercearia</option>
@@ -130,6 +132,5 @@
   <footer class="footer">
     <p>SuperMart &middot; Projeto acadêmico de Programação Web Front-End</p>
   </footer>
-
 </body>
 </html>

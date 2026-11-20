@@ -29,12 +29,12 @@ Não é preciso instalar nada.
 
 ```
 supermart-estoque/
-├── visao_geral.html  # cadastro e visão geral do estoque
-├── movimentacoes.html # estoque atual e histórico de movimentações
+├── visao_geral.html
+├── movimentacoes.html
 ├── css/
-│   └── style.css     # estilos compartilhados
+│   └── style.css
 ├── js/
-│   └── script.js     # lógica de estoque e movimentações
+│   └── script.js
 ├── .gitignore
 └── README.md
 ```
