@@ -44,13 +44,13 @@ Toda ação que muda o estoque gera, quando for o caso, um registro em **Movimen
 
 ## Regra de estoque baixo
 
-Um produto aparece como **Estoque baixo!** quando a quantidade em estoque está no máximo 5 unidades acima do estoque mínimo:
+Um produto aparece como **Estoque baixo!** quando a quantidade em estoque está igual ou menor do que o estoque mínimo:
 
 ```
-quantidade - estoque mínimo <= 5
+quantidade <= estoque mínimo
 ```
 
-Exemplo: com estoque mínimo 10, o produto já é marcado como baixo quando restam 15 unidades ou menos.
+Exemplo: com estoque mínimo 10, o produto é marcado como baixo quando restam 10 unidades ou menos.
 
 ## Tecnologias
 
