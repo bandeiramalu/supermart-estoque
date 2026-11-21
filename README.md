@@ -40,7 +40,7 @@ Toda ação que muda o estoque gera, quando for o caso, um registro em **Movimen
 | Dar baixa (em qualquer uma das páginas) | Saída do tipo **Baixa** |
 | Dar entrada (em qualquer uma das páginas) | Saída do tipo **Entrada** |
 | Editar só nome, categoria, preço ou mínimo | Nenhum |
-| Excluir um produto | Nenhum |
+| Excluir um produto | Saída do tipo **Produto excluído**, com a quantidade restante em estoque |
 
 ## Regra de estoque baixo
 
