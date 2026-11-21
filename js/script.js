@@ -114,7 +114,7 @@ function obterStatusProduto(produto) {
         return { texto: "Zerado", classe: "zerado", linha: "linha-zerado" };
     }
 
-    if (produto.quantidade - produto.minimo <= 5) {
+    if (produto.quantidade <= produto.minimo) {
         return {
             texto: "Estoque baixo",
             classe: "baixo",
