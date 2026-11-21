@@ -89,6 +89,13 @@ function criarDadosIniciais() {
     };
 }
 
+const colunaAcoes = document.createElement("td");
+colunaAcoes.className = "acoes";
+colunaAcoes.appendChild(
+    criarBotaoAcao("Entrada", "btn-entrada", () => registrarEntrada(produto)),
+);
+
+
 function salvarDados() {
     try {
         localStorage.setItem(CHAVE_DADOS, JSON.stringify(dados));
@@ -108,7 +115,11 @@ function obterStatusProduto(produto) {
     }
 
     if (produto.quantidade <= produto.minimo) {
-        return { texto: "Estoque baixo", classe: "baixo", linha: "linha-baixo" };
+        return {
+            texto: "Estoque baixo",
+            classe: "baixo",
+            linha: "linha-baixo",
+        };
     }
 
     return { texto: "OK", classe: "normal", linha: "" };
@@ -191,6 +202,24 @@ function registrarEntrada(produto) {
     renderizarTudo();
 }
 
+function registrarEntrada(produto) {
+    const resposta = prompt(
+        `Quantas unidades de "${produto.nome}" deseja dar entrada?`,
+    );
+    if (resposta === null) return;
+
+    const quantidade = Number(resposta);
+    if (!Number.isInteger(quantidade) || quantidade <= 0) {
+        alert("Informe uma quantidade inteira maior que zero.");
+        return;
+    }
+
+    produto.quantidade += quantidade;
+    registrarMovimentacao(produto, "Entrada", quantidade, "Entrada");
+    salvarDados();
+    renderizarTudo();
+}
+
 function criarLinhaProduto(produto, permitirEdicao) {
     const linha = document.createElement("tr");
     const status = obterStatusProduto(produto);
@@ -207,10 +236,10 @@ function criarLinhaProduto(produto, permitirEdicao) {
         linha.appendChild(celula);
     });
 
-   if (status.linha) {
+    if (status.linha) {
         linha.classList.add(status.linha);
     }
-    
+
     const celulaStatus = document.createElement("td");
     const seloStatus = document.createElement("span");
     seloStatus.className = `status status-${status.classe}`;
@@ -222,7 +251,11 @@ function criarLinhaProduto(produto, permitirEdicao) {
 
     const colunaAcoes = document.createElement("td");
     colunaAcoes.appendChild(
-        criarBotaoAcao("Entrada", "btn-entrada", () => registrarEntrada(produto)),
+        criarBotaoAcao(
+            "Entrada",
+            "btn-entrada",
+            () => registrarEntrada(produto),
+        ),
     );
     colunaAcoes.appendChild(
         criarBotaoAcao("Baixa", "btn-baixa", () => registrarBaixa(produto)),
@@ -245,6 +278,12 @@ function criarLinhaProduto(produto, permitirEdicao) {
             criarBotaoAcao("Excluir", "btn-excluir", () => {
                 if (!confirm(`Deseja excluir "${produto.nome}"?`)) return;
 
+                registrarMovimentacao(
+                    produto,
+                    "Saída",
+                    produto.quantidade,
+                    "Produto excluído",
+                );
                 dados.produtos = dados.produtos.filter(
                     (item) => item.id !== produto.id,
                 );
@@ -429,7 +468,12 @@ if (formulario) {
         } else {
             const produto = { id: criarId(), ...produtoAtualizado };
             dados.produtos.push(produto);
-            registrarMovimentacao(produto, "Entrada", produto.quantidade, "Cadastro");
+            registrarMovimentacao(
+                produto,
+                "Entrada",
+                produto.quantidade,
+                "Cadastro",
+            );
         }
 
         salvarDados();
