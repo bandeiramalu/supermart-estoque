@@ -44,15 +44,15 @@ body {
 
 .btn_lateral {
   flex: 1;
-  height: 48px;
-  padding: 0 10px;
+  height: 64px;
+  padding: 0 16px;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: #ffffff;
   background-color: transparent;
   border: none;
-  border-radius: 10px;
+  border-radius: 14px;
   cursor: pointer;
 }
 
@@ -166,7 +166,7 @@ main section.tabelas_movimentacoes {
 
 #cadastro_prod > div > div:last-child {
   display: flex;
-  gap: 12px;
+  gap: 16px;
 }
 
 #cadastro_prod label {
@@ -220,13 +220,13 @@ main section.tabelas_movimentacoes {
 
 .btn67 {
   flex: 1;
-  height: 48px;
-  padding: 0 16px;
+  height: 64px;
+  padding: 0 20px;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   white-space: nowrap;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
 }
 
@@ -315,25 +315,35 @@ main section.tabelas_movimentacoes {
   background-color: #d62828;
 }
 
+.acoes {
+  min-width: 230px;
+}
+
 .btn-acao {
-  min-width: 34px;
-  height: 28px;
-  padding: 0 10px;
-  margin-right: 4px;
+  min-width: 104px;
+  height: 56px;
+  padding: 0 18px;
+  margin: 4px 12px 4px 0;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 700;
   color: #003049;
   background-color: #f8f9fa;
-  border: 1px solid #003049;
-  border-radius: 6px;
+  border: 2px solid #003049;
+  border-radius: 12px;
   cursor: pointer;
+}
+
+.btn-acao:active,
+.btn67:active,
+.btn_lateral:active {
+  transform: scale(0.97);
 }
 
 .btn-editar {
   color: #003049;
   background-color: #f8f9fa;
-  border: 1px solid #003049;
+  border: 2px solid #003049;
 }
 
 .btn-editar:hover {
@@ -343,7 +353,7 @@ main section.tabelas_movimentacoes {
 .btn-baixa {
   color: #ffffff;
   background-color: #2a9d8f;
-  border: 1px solid #21867a;
+  border: 2px solid #21867a;
 }
 
 .btn-baixa:hover {
@@ -353,7 +363,7 @@ main section.tabelas_movimentacoes {
 .btn-entrada {
   color: #ffffff;
   background-color: #457b9d;
-  border: 1px solid #35627e;
+  border: 2px solid #35627e;
 }
 
 .btn-entrada:hover {
@@ -363,7 +373,7 @@ main section.tabelas_movimentacoes {
 .btn-excluir {
   color: #ffffff;
   background-color: #d62828;
-  border: 1px solid #b01e1e;
+  border: 2px solid #b01e1e;
 }
 
 .btn-excluir:hover {
@@ -400,7 +410,7 @@ main section.tabelas_movimentacoes {
 
   .btn_lateral {
     flex: none;
-    width: 180px;
+    width: 220px;
   }
 
   main {

@@ -89,6 +89,12 @@ function criarDadosIniciais() {
     };
 }
 
+const colunaAcoes = document.createElement("td");
+colunaAcoes.className = "acoes";
+colunaAcoes.appendChild(
+    criarBotaoAcao("Entrada", "btn-entrada", () => registrarEntrada(produto)),
+);
+
 function salvarDados() {
     try {
         localStorage.setItem(CHAVE_DADOS, JSON.stringify(dados));
